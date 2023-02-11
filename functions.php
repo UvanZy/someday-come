@@ -7,3 +7,12 @@ function calc($args ){
       }else{
          echo "Введите коррeктное значение";
       }
+
+  /*ИЗвлечение одной крайней записи по id*/
+ function getLatestPostById( $field, $table) {
+   global $pdo;
+   $sql = "SELECT $field FROM $table ORDER BY id DESC LIMIT 1;";
+   $stmt =  $pdo->prepare($sql);
+   $stmt->execute();
+   return $stmt->fetchColumn();
+   }
