@@ -12,3 +12,5 @@ try {
   foreach ($result as $r) {
       echo $r['nameTable'];
   }
+
+$sth->fetchAll(PDO::FETCH_COLUMN); //вывод ключей по номерам и без дублей
