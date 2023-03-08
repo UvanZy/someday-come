@@ -16,3 +16,10 @@ function calc($args ){
    $stmt->execute();
    return $stmt->fetchColumn();
    }
+    /*генерируем уникальный токен*/
+ function generateUniqueIdentifier($length = 10) {
+  $bytes = openssl_random_pseudo_bytes($length);
+  return bin2hex($bytes);
+}
+$id = generateUniqueIdentifier(); // генерируем уникальный идентификатор
+echo $id; // выводим идентификатор на экран
